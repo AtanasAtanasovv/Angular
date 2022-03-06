@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<section class="mainWrapper p-3">
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="mb-3" *ngIf="currentUser.role !== 'admin'">
+    <h2 >Applied for:</h2>
+      <span *ngIf="pendingAds.length === 0">No Pending advertisments</span>
+      <div>
+      <ul
+        *ngFor="let pendingAd of pendingAds; let i = index"
+        class="list-group"
+      >
+        <li
+        >
+          {{ pendingAd.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div  *ngIf="currentUser.role !== 'admin'">
+    <h2 >Approved for:</h2>
+    <div>
+      <span *ngIf="approvedAds.length === 0">No Approved advertisments</span>
+      <ul
+        *ngFor="let approvedAd of approvedAds; let i = index"
+
+      >
+        <li
+
+        >
+          {{ approvedAd.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="currentUser.role !== 'admin'">
+    <h2 >Rejected for:</h2>
+    <span *ngIf="rejectedAds.length === 0">No Rejected advertisments</span>
+    <div>
+      <ul
+        *ngFor="let rejectedAd of rejectedAds; let i = index"
+
+      >
+        <li
+        >
+          {{ rejectedAd.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

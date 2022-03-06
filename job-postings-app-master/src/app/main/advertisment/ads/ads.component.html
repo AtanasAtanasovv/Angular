@@ -1,0 +1,11 @@
+  <section>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <app-ad-item
+      *ngFor="let ad of ads; let i = index"
+      [ad]="ad"
+      (adLiked)="onAdLike($event)"
+      (adCandidated)="onAdCandidate($event)"
+      (adDeleted)="onAdDelete($event)"
+    ></app-ad-item>
+  </section>

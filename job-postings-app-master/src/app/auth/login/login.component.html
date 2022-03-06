@@ -1,0 +1,30 @@
+
+<div class="col-md-11">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5">
+            <h1 class="text-italic">Login</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+                <div class="mb-3">
+                    <label style="font-weight: bold" for="mail">Email address</label>
+                    <input formControlName="mail" type="text" class="form-control"
+                        pattern="[a-zA-Z0-9.-_]{5,}" [ngClass]="{ 'is-valid': !form['mail'].errors }" />
+                    <div class="error-message" *ngIf="form['mail'].errors?.['required'] && form['mail'].touched">
+                        Please, enter email!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label style="font-weight: bold" for="exampleInputPassword1">Password</label>
+                    <input formControlName="password" type="password" class="form-control"
+                        [ngClass]="{ 'is-valid': !form['password'].errors }" />
+                    <div class="error-message" *ngIf="form['password'].touched && form['password'].errors?.['required']">
+                        Please, enter password!
+                    </div>
+                </div>
+                <button type="submit" >Submit</button>
+              <br><br>
+                <p><a routerLink="/register">Register</a></p>
+            </form>
+        </div>
+    </div>
+</div>

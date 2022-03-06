@@ -1,0 +1,51 @@
+<div style="margin-bottom:50px;">
+  <div >
+    <h2 >{{ ad.title }}</h2>
+    <p >{{ ad.description }}</p>
+
+    <div >
+      <span>{{ ad.likes?.length || 0 }} likes</span> |
+      <span>{{ ad.type }}</span>  <span>{{ ad.category }}</span> |
+      <button
+        *ngIf="!shouldShowLike()"
+        type="button"
+        (click)="onLike()"
+      >
+        Like
+      </button>
+      <button
+        *ngIf="shouldShowLike()"
+        type="button"
+
+        (click)="onLike()"
+      >
+        Unlike
+      </button>
+      <button
+        *ngIf="shouldCandidate()"
+        type="button"
+
+        (click)="onCandidate()"
+      >
+        Candidate
+      </button>
+      <button
+        *ngIf="ad.creator === currentUser.id"
+        type="button"
+
+        (click)="onDelete()"
+      >
+        Delete
+      </button>
+      <a
+
+        *ngIf="ad.creator === currentUser.id"
+        [routerLink]="['/ads', 'edit', ad.id]"
+      >Edit</a
+      >
+    </div>
+
+    <div >
+    </div>
+  </div>
+</div>

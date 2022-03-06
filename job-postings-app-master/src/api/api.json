@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "mail": "admin@gmail.com",
+      "password": "Admin_123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Atanas",
+      "mail": "atanas@gmail.com",
+      "password": "nakata",
+      "role": "user"
+    }
+  ],
+  "ads": [
+    {
+      "id": 5,
+      "creator": 1,
+      "title": "JAVA Dev",
+      "description": "Java Dev in kodar.",
+      "category": "Dev",
+      "type": "Full-time",
+      "likes": [],
+      "pendingApplicants": [],
+      "rejectedApplicants": [
+        1
+      ],
+      "approvedApplicants": [
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "creator": 1,
+      "title": "Software dev in Google",
+      "description": "Software developer in Google",
+      "category": "Office Administration",
+      "type": "Part-time",
+      "likes": [],
+      "pendingApplicants": [],
+      "rejectedApplicants": [
+        1
+      ],
+      "approvedApplicants": [
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "creator": 1,
+      "title": "New Ad",
+      "description": "New Job",
+      "category": "Development",
+      "type": "Full Time",
+      "likes": [],
+      "pendingApplicants": [],
+      "rejectedApplicants": [
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "creator": 1,
+      "title": "Angular Dev",
+      "description": "Need an angular god",
+      "category": "Development",
+      "type": "Full Time",
+      "pendingApplicants": [
+        2
+      ]
+    }
+  ]
+}

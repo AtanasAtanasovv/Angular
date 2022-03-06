@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="mainWrapper">
+  <h2 class="p-1 border-bottom border-secondary header">Apply for {{ ad.title }}</h2>
+
+  <div>
+    <h5>Applicants:</h5>
+
+    <span *ngIf="applicants.length === 0">No pending applicants for this advertisment.</span>
+
+    <ul *ngFor="let applicant of applicants; let i = index" class="list-group">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        {{ applicant.name }}
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="onApprove(applicant.id)"
+        >
+          Approve
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="onReject(applicant.id)"
+        >
+          Reject
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
